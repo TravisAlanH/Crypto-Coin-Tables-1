@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = React.useState(true);
 
   React.useEffect(() => {
-    Axios.get("https://api.coingecko.com/api/v3/coins/").then((response) => {
+    Axios.get("https://api.minerstat.com/v2/coins").then((response) => {
       setData(response.data);
     });
   }, []);
@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="App">
       {/* <button onClick={ }>Data</button> */}
-      {console.log(data[0])}
-      <p>{data[0].id}</p>
+      {console.log(data)}
+      {/* <p>{data[0].id}</p> */}
     </div>
   );
 }
